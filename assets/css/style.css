@@ -1092,3 +1092,99 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+/*--------------------------------------------------------------
+# Auto-Scrolling Certificates Section
+--------------------------------------------------------------*/
+.scrolling-certificates {
+  padding: 60px 0;
+  background: #f5f8fd;
+}
+
+.scrolling-certificates .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.certificate-scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 20px 0;
+}
+
+.certificate-scroll-track {
+  display: inline-flex;
+  animation: scroll-right-to-left 30s linear infinite;
+  gap: 30px;
+}
+
+.certificate-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 16px rgba(1, 41, 112, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(1, 41, 112, 0.15);
+}
+
+.certificate-item img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.certificate-item span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.certificate-scroll-container:hover .certificate-scroll-track {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .certificate-item {
+    min-width: 150px;
+    padding: 10px;
+  }
+  
+  .certificate-item img {
+    width: 100px;
+    height: 60px;
+  }
+  
+  .certificate-item span {
+    font-size: 10px;
+  }
+  
+  .certificate-scroll-track {
+    animation-duration: 25s;
+    gap: 20px;
+  }
+}
